@@ -35,7 +35,7 @@ ostream& operator << (ostream& out, const Vector3D& A)
 	out << string(A);
 	return out;
 }
-istream& operator >> (istream& in, Vector3D& A) throw(invalid_argument, bad_exception, MyException)
+istream& operator >> (istream& in, Vector3D& A) throw(invalid_argument, bad_exception, MyException, const char *)
 {
 	cout << "Enter an X of Vector3D: "; in >> A.x;
 	cout << "Enter an Y of Vector3D: "; in >> A.y;
@@ -47,6 +47,8 @@ istream& operator >> (istream& in, Vector3D& A) throw(invalid_argument, bad_exce
 		throw bad_exception();
 	else if (A.x == 3 && A.y == 3 && A.z == 3)
 		throw MyException("MyException");
+	else if (A.x == 4 && A.y == 4 && A.z == 4)
+		throw "Exception";
 
 	return in;
 }

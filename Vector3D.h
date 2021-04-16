@@ -25,7 +25,7 @@ public:
 	Vector3D(const Vector3D&);
 
 	Vector3D& operator = (const Vector3D&);
-	friend ostream& operator << (ostream&, const Vector3D&) throw(invalid_argument, bad_exception, MyException);
+	friend ostream& operator << (ostream&, const Vector3D&) throw(invalid_argument, bad_exception, MyException, const char*);
 	friend istream& operator >> (istream&, Vector3D&);
 	operator string() const;
 

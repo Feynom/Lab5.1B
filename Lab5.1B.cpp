@@ -27,10 +27,15 @@ int main()
             initResult = false;
             cout << e.what() << endl;
         }
-        catch (MyException e)
+        catch (MyException& e)
         {
             initResult = false;
             cout << e.what() << endl;
+        }
+        catch (const char* e)
+        {
+            initResult = false;
+            cerr << e << endl;
         }
     } while (!initResult);
 
